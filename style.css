@@ -576,3 +576,86 @@ button:hover,
     }
 
 }
+/* =========================================
+   FINAL PARTICLE + GHOST FIX
+========================================= */
+
+#particles {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+#particle-canvas {
+    z-index: -2 !important;
+    pointer-events: none !important;
+}
+
+.particle {
+    position: absolute !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+.ghost-assistant {
+    position: fixed !important;
+    top: 25px !important;
+    right: 30px !important;
+    left: auto !important;
+    z-index: 99999 !important;
+}
+
+nav,
+.topbar {
+    position: relative;
+    z-index: 100 !important;
+}
+
+/* Keep website content above particles */
+main,
+section,
+.container,
+.content,
+.hero,
+.about,
+.skills,
+.projects,
+.education,
+.contact {
+    position: relative;
+    z-index: 2;
+}
+
+/* Prevent text from getting cut off */
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+span {
+    overflow-wrap: break-word;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .ghost-assistant {
+        width: 180px !important;
+        right: 10px !important;
+        top: 10px !important;
+    }
+
+    #particles {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+}
