@@ -1,118 +1,72 @@
-/* =================================
-   SARVESH PORTFOLIO JAVASCRIPT
-================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+    /* ============================
+       PARTICLE SYSTEM
+    ============================ */
 
-    /* ===============================
-       MOVING PARTICLES
-    =============================== */
+    const particles = document.getElementById("particles");
 
-    const particleContainer = document.getElementById("particles");
+    if (particles) {
 
-    if (particleContainer) {
+        for (let i = 0; i < 100; i++) {
 
-        for (let i = 0; i < 70; i++) {
+            const p = document.createElement("div");
 
-            const particle = document.createElement("div");
+            p.className = "particle";
 
-            particle.className = "particle";
+            p.style.left =
+                Math.random() * 100 + "vw";
 
-            particle.style.left =
-                Math.random() * 100 + "%";
-
-            particle.style.animationDuration =
+            p.style.animationDuration =
                 (5 + Math.random() * 10) + "s";
 
-            particle.style.animationDelay =
-                Math.random() * 8 + "s";
+            p.style.animationDelay =
+                Math.random() * 10 + "s";
 
             const size =
-                1 + Math.random() * 3;
+                Math.random() * 3 + 1;
 
-            particle.style.width = size + "px";
-            particle.style.height = size + "px";
+            p.style.width = size + "px";
+            p.style.height = size + "px";
 
-            particleContainer.appendChild(particle);
+            particles.appendChild(p);
         }
     }
 
 
-    /* ===============================
-       GHOST ASSISTANT
-    =============================== */
+    /* ============================
+       BOO CLICK
+    ============================ */
 
-    const ghost = document.querySelector(".ghost-assistant");
+    const ghost =
+        document.getElementById("ghost");
 
-    if (ghost) {
+    const bubble =
+        document.getElementById("ghost-bubble");
 
-        const button =
-            ghost.querySelector(".ghost-button");
+    if (ghost && bubble) {
 
-        if (button) {
+        ghost.addEventListener("click", function () {
 
-            button.addEventListener("click", () => {
+            bubble.innerHTML =
+                "Hey! 👻<br><span>I'm Boo — your portfolio assistant!</span>";
 
-                const text =
-                    ghost.querySelector(".ghost-text");
+            setTimeout(function () {
 
-                if (text) {
+                bubble.innerHTML =
+                    "Hey! I'm Boo 👻<br><span>Need a tour?</span>";
 
-                    text.textContent =
-                        "I can help you explore my skills, projects and experience! 👻";
-                }
-            });
-        }
+            }, 4000);
+
+        });
     }
 
 
-    /* ===============================
-       MOUSE PARTICLE EFFECT
-    =============================== */
+    /* ============================
+       CONSOLE
+    ============================ */
 
-    document.addEventListener("mousemove", (event) => {
-
-        const spark =
-            document.createElement("div");
-
-        spark.style.position = "fixed";
-        spark.style.left = event.clientX + "px";
-        spark.style.top = event.clientY + "px";
-
-        spark.style.width = "4px";
-        spark.style.height = "4px";
-
-        spark.style.borderRadius = "50%";
-
-        spark.style.background = "#72e8ff";
-
-        spark.style.boxShadow =
-            "0 0 10px #72e8ff";
-
-        spark.style.pointerEvents = "none";
-
-        spark.style.zIndex = "9998";
-
-        document.body.appendChild(spark);
-
-        setTimeout(() => {
-            spark.remove();
-        }, 500);
-    });
-
-
-    /* ===============================
-       CONSOLE MESSAGE
-    =============================== */
-
-    console.log(
-        "%c👻 BOO ONLINE",
-        "color:#72e8ff;font-size:20px;font-weight:bold;"
-    );
-
-    console.log(
-        "%cWelcome to Sarvesh's portfolio!",
-        "color:#ffffff;font-size:14px;"
-    );
+    console.log("👻 BOO ONLINE");
+    console.log("⚡ Sarvesh Portfolio System Online");
 
 });
