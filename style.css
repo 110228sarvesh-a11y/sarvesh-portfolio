@@ -1,0 +1,405 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: white;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+nav h2 {
+    margin-right: auto;
+    color: #2563eb;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+#home {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home h1 {
+    font-size: 55px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+#home h2 {
+    font-size: 25px;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+#home p {
+    max-width: 650px;
+    font-size: 18px;
+}
+
+section h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+#about {
+    background-color: white;
+}
+
+#about p {
+    max-width: 750px;
+    font-size: 18px;
+}
+
+#projects {
+    background-color: #f5f7fb;
+}
+
+#projects h3 {
+    margin-top: 30px;
+    color: #2563eb;
+    font-size: 22px;
+}
+
+#projects p {
+    max-width: 700px;
+}
+
+#contact {
+    background-color: white;
+    text-align: center;
+}
+<section id="home">
+
+    <div class="hero-text">
+
+        <p class="hello">HELLO, I'M</p>
+
+        <h1>Sarvesh 👋</h1>
+
+        <h2>Computer Science Engineering Student</h2>
+
+        <p class="intro">
+            I'm learning Python, exploring AI and technology,
+            and building projects along the way.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="button">View My Projects</a>
+            <a href="#contact" class="button secondary">Let's Connect</a>
+        </div>
+
+    </div>
+
+    <div class="hero-card">
+        <div class="code-symbol">&lt;/&gt;</div>
+        <h3>Always Learning</h3>
+        <p>Code • Explore • Build • Improve</p>
+    </div>
+
+</section>
+#home {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hello {
+    color: #2563eb;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#home h1 {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+#home h2 {
+    font-size: 25px;
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 19px;
+    max-width: 550px;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    background-color: #2563eb;
+    color: white;
+    padding: 13px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #1d4ed8;
+}
+
+.button.secondary {
+    background-color: white;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+
+.hero-card {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.code-symbol {
+    font-size: 65px;
+    color: #2563eb;
+    font-weight: bold;
+}
+.hero-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.project-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: white;
+    width: 300px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    color: #2563eb;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.project-card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.project-card span {
+    display: inline-block;
+    background-color: #eef4ff;
+    color: #2563eb;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+#education {
+    background-color: white;
+}
+
+.education-card {
+    background-color: #f5f7fb;
+    max-width: 750px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.education-card h3 {
+    color: #2563eb;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.education-card h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.education-card p {
+    color: #555;
+    margin-top: 10px;
+}
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact-buttons a {
+    text-decoration: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-buttons a:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact-buttons a {
+    text-decoration: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-buttons a:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav h2 {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 60px 7%;
+    }
+
+    #home {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 70px;
+    }
+
+    #home h1 {
+        font-size: 45px;
+    }
+
+    #home h2 {
+        font-size: 20px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-card {
+        width: 260px;
+        height: 280px;
+    }
+
+    .project-container {
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .skills-container {
+        justify-content: center;
+    }
+
+    .skill-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
