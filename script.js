@@ -565,3 +565,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+function openWasteProject() {
+    window.open(
+        "YOUR_GITHUB_PROJECT_LINK",
+        "_blank"
+    );
+}
