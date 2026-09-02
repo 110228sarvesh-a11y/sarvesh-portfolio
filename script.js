@@ -1,42 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ============================
-       PARTICLE SYSTEM
-    ============================ */
+    /* =========================================
+       MOVING PARTICLES
+    ========================================= */
 
     const particles = document.getElementById("particles");
 
     if (particles) {
 
-        for (let i = 0; i < 100; i++) {
+        const particleCount = 100;
 
-            const p = document.createElement("div");
+        for (let i = 0; i < particleCount; i++) {
 
-            p.className = "particle";
+            const particle =
+                document.createElement("div");
 
-            p.style.left =
+            particle.className = "particle";
+
+            particle.style.left =
                 Math.random() * 100 + "vw";
 
-            p.style.animationDuration =
-                (5 + Math.random() * 10) + "s";
+            particle.style.animationDuration =
+                (6 + Math.random() * 12) + "s";
 
-            p.style.animationDelay =
-                Math.random() * 10 + "s";
+            particle.style.animationDelay =
+                Math.random() * 12 + "s";
 
             const size =
                 Math.random() * 3 + 1;
 
-            p.style.width = size + "px";
-            p.style.height = size + "px";
+            particle.style.width =
+                size + "px";
 
-            particles.appendChild(p);
+            particle.style.height =
+                size + "px";
+
+            particles.appendChild(particle);
         }
     }
 
 
-    /* ============================
-       BOO CLICK
-    ============================ */
+    /* =========================================
+       BOO ASSISTANT
+    ========================================= */
 
     const ghost =
         document.getElementById("ghost");
@@ -44,29 +50,68 @@ document.addEventListener("DOMContentLoaded", function () {
     const bubble =
         document.getElementById("ghost-bubble");
 
+
     if (ghost && bubble) {
 
         ghost.addEventListener("click", function () {
 
             bubble.innerHTML =
-                "Hey! 👻<br><span>I'm Boo — your portfolio assistant!</span>";
+                "HEY! 👻<br>" +
+                "<span>I'm Boo — your portfolio assistant!</span>";
 
             setTimeout(function () {
 
                 bubble.innerHTML =
-                    "Hey! I'm Boo 👻<br><span>Need a tour?</span>";
+                    "Hey! I'm Boo 👻<br>" +
+                    "<span>Need a tour?</span>";
 
             }, 4000);
 
         });
+
     }
 
 
-    /* ============================
-       CONSOLE
-    ============================ */
+    /* =========================================
+       SMOOTH PROJECT BUTTON BEHAVIOUR
+    ========================================= */
 
-    console.log("👻 BOO ONLINE");
-    console.log("⚡ Sarvesh Portfolio System Online");
+    const projectButtons =
+        document.querySelectorAll(".project-button");
+
+    projectButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+
+            if (button.getAttribute("href") === "#") {
+
+                event.preventDefault();
+
+                alert(
+                    "🚧 This project page is coming soon!"
+                );
+
+            }
+
+        });
+
+    });
+
+
+    /* =========================================
+       CONSOLE
+    ========================================= */
+
+    console.log(
+        "👻 BOO ONLINE"
+    );
+
+    console.log(
+        "⚡ SARVESH PORTFOLIO SYSTEM ONLINE"
+    );
+
+    console.log(
+        "✨ PARTICLE SYSTEM ACTIVE"
+    );
 
 });
