@@ -2049,3 +2049,131 @@ footer span {
     }
 
 }
+/* =========================================
+   FINAL PROJECT CARD OVERLAP FIX
+========================================= */
+
+.projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.projects-grid .project-card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-height: 360px !important;
+    height: 360px !important;
+
+    padding: 20px !important;
+    padding-bottom: 85px !important;
+
+    overflow: hidden !important;
+}
+
+.projects-grid .project-number {
+    flex-shrink: 0;
+}
+
+.projects-grid .project-icon {
+    width: 60px !important;
+    height: 60px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 38px !important;
+
+    margin: 12px 0 18px !important;
+
+    flex-shrink: 0;
+}
+
+.projects-grid .project-card h3 {
+    margin: 0 0 14px !important;
+
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+
+    width: 100% !important;
+}
+
+.projects-grid .project-card p {
+    margin: 0 !important;
+
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+
+    width: 100% !important;
+
+    overflow-wrap: break-word !important;
+}
+
+.projects-grid .project-tech {
+    position: absolute !important;
+
+    left: 20px !important;
+    bottom: 18px !important;
+
+    margin: 0 !important;
+
+    padding: 5px 8px !important;
+
+    font-size: 14px !important;
+
+    max-width: 48% !important;
+
+    white-space: nowrap;
+}
+
+.projects-grid .project-open {
+    position: absolute !important;
+
+    right: 18px !important;
+    bottom: 18px !important;
+
+    margin: 0 !important;
+
+    padding: 8px 10px !important;
+
+    font-size: 8px !important;
+
+    white-space: nowrap;
+
+    text-decoration: none !important;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .projects-grid .project-card {
+        height: 330px !important;
+        min-height: 330px !important;
+    }
+
+}
