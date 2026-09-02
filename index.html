@@ -2,619 +2,840 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sarvesh | CSE Student</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sarvesh // Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- BACKGROUND EFFECTS -->
-    <div class="noise"></div>
+    <!-- =========================================
+         CRT / SCREEN EFFECTS
+    ========================================== -->
+
+    <div class="screen-noise"></div>
     <div class="scanlines"></div>
 
-    <div id="particles"></div>
-    <canvas id="particle-canvas"></canvas>
 
+    <!-- =========================================
+         MAIN RETRO DEVICE
+    ========================================== -->
 
-    <!-- =========================
-         GHOST ASSISTANT
-    ========================== -->
+    <main class="retro-device">
 
-    <aside class="ghost-assistant">
 
-        <div class="ghost-bubble" id="ghost-bubble">
-            Hey! I'm Boo 👻
-            <br>
-            <span>Need a tour?</span>
-        </div>
+        <!-- =====================================
+             TOP STATUS BAR
+        ====================================== -->
 
-        <button class="ghost" id="ghost" aria-label="Open portfolio assistant">
+        <header class="status-bar">
 
-            <span class="ghost-glow"></span>
+            <div class="status-left">
 
-            <span class="ghost-body">
-
-                <i class="eye left"></i>
-                <i class="eye right"></i>
-
-                <i class="mouth"></i>
-
-            </span>
-
-            <span class="ghost-wave">✦</span>
-
-        </button>
-
-    </aside>
-
-
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
-    <nav class="topbar">
-
-        <a href="#home" class="logo">
-            &lt;/&gt;
-        </a>
-
-        <div class="nav-links">
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =========================
-         HOME
-    ========================== -->
-
-    <main>
-
-        <section id="home">
-
-            <div class="hero">
-
-                <div class="hero-text">
-
-                    <div class="system-status">
-                        ● SYSTEM ONLINE
-                    </div>
-
-                    <p class="terminal-line">
-                        &gt; INITIALIZING USER PROFILE...
-                    </p>
-
-                    <p class="hello">
-                        HELLO, I'M
-                    </p>
-
-                    <h1>
-                        SARVESH
-                    </h1>
-
-                    <h2>
-                        // CSE STUDENT
-                    </h2>
-
-                    <p class="intro">
-                        Learning to code. Exploring AI.
-                        Building things one project at a time.
-                    </p>
-
-                    <div class="level">
-                        <span>LEVEL 01</span>
-                        <span>LEARNING MODE</span>
-                    </div>
-
-                    <div class="buttons">
-
-                        <a href="#projects" class="button">
-                            VIEW PROJECTS
-                        </a>
-
-                        <a href="#contact" class="button secondary">
-                            CONNECT WITH ME
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROFILE -->
-
-                <div class="profile-wrapper">
-
-                    <div class="profile-window">
-
-                        <div class="window-top">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                            <label>
-                                PROFILE_DATA.SYS
-                            </label>
-
-                        </div>
-
-                        <div class="profile-image-box">
-
-                            <img
-                                src="profile.jpg"
-                                alt="Sarvesh"
-                            >
-
-                        </div>
-
-                        <div class="profile-footer">
-
-                            <span>IMG_001</span>
-                            <span>USER_PROFILE</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section id="about">
-
-            <div class="section-label">
-                PROFILE_DATA.SYS
-            </div>
-
-            <h2>
-                &lt; ABOUT ME /&gt;
-            </h2>
-
-            <div class="about-grid">
-
-                <div class="terminal-card">
-
-                    <div class="card-title">
-                        ● ● ● &nbsp; summary.txt
-                    </div>
-
-                    <p>
-                        Hey! I'm Sarvesh, a first-year Computer
-                        Science Engineering student who is curious
-                        about technology and enjoys learning by
-                        building things.
-                    </p>
-
-                </div>
-
-
-                <div class="terminal-card">
-
-                    <div class="card-title">
-                        ● ● ● &nbsp; current_status.sys
-                    </div>
-
-                    <p>
-                        I'm currently exploring Python, web
-                        development and artificial intelligence.
-                        I'm still at the beginning of my journey,
-                        but I enjoy experimenting with new ideas,
-                        working on projects and improving my skills
-                        step by step.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="mission-card">
-
-                <span class="mission-title">
-                    CURRENT MISSION
+                <span class="signal">
+                    ▮▮▮
                 </span>
 
-                <p>
-                    Build meaningful projects while discovering
-                    the areas of technology I'm most passionate about.
+                <span class="mail-icon">
+                    ✉
+                </span>
+
+            </div>
+
+
+            <div class="status-right">
+
+                <span id="clock">
+                    10:34
+                </span>
+
+                <span class="battery">
+                    ▮▮▮
+                </span>
+
+
+                <!-- THREE DOT MENU -->
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Open menu"
+                >
+                    ⋮
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             RETRO MENU
+        ====================================== -->
+
+        <div
+            class="retro-menu"
+            id="retroMenu"
+        >
+
+            <div class="menu-title">
+                SYSTEM MENU
+            </div>
+
+
+            <button
+                class="menu-item"
+                data-section="home"
+            >
+                <span>⌂</span>
+                <span>01 HOME</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="about"
+            >
+                <span>♙</span>
+                <span>02 ABOUT</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="skills"
+            >
+                <span>▣</span>
+                <span>03 SKILLS</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="projects"
+            >
+                <span>▤</span>
+                <span>04 PROJECTS</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="education"
+            >
+                <span>◇</span>
+                <span>05 EDUCATION</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="contact"
+            >
+                <span>✉</span>
+                <span>06 CONTACT</span>
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             SCREEN CONTENT
+        ====================================== -->
+
+        <div class="screen-content">
+
+
+            <!-- =================================
+                 HOME
+            ================================== -->
+
+            <section
+                id="home"
+                class="page-section home-section"
+            >
+
+                <div class="system-status">
+                    ■ SYSTEM ONLINE
+                </div>
+
+
+                <p class="small-heading">
+                    HELLO, I'M
                 </p>
 
-            </div>
 
-        </section>
+                <h1>
+                    SARVESH
+                </h1>
 
 
-        <!-- =========================
-             SKILLS
-        ========================== -->
-
-        <section id="skills">
-
-            <div class="section-label">
-                SKILL_TREE.DAT
-            </div>
-
-            <h2>
-                [ SKILLS &amp; EXPERIMENTS ]
-            </h2>
-
-            <div class="skills-container">
-
-                <div class="skill-card">
-                    <div class="skill-icon">01</div>
-                    <h3>🐍 Python</h3>
-                    <p>BEGINNER</p>
-                    <div class="skill-bar">
-                        <span style="width:35%"></span>
-                    </div>
+                <div class="role">
+                    CSE STUDENT
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">02</div>
-                    <h3>🌐 HTML</h3>
-                    <p>BEGINNER</p>
-                    <div class="skill-bar">
-                        <span style="width:40%"></span>
-                    </div>
-                </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">03</div>
-                    <h3>🎨 CSS</h3>
-                    <p>BEGINNER</p>
-                    <div class="skill-bar">
-                        <span style="width:35%"></span>
-                    </div>
-                </div>
+                <p class="intro">
 
-                <div class="skill-card">
-                    <div class="skill-icon">04</div>
-                    <h3>⚡ JavaScript</h3>
-                    <p>CURRENTLY LEARNING</p>
-                    <div class="skill-bar">
-                        <span style="width:20%"></span>
-                    </div>
-                </div>
+                    Learning to code.<br>
+                    Exploring AI.<br>
+                    Building things one<br>
+                    project at a time.
 
-                <div class="skill-card">
-                    <div class="skill-icon">05</div>
-                    <h3>🤖 Artificial Intelligence</h3>
-                    <p>EXPLORING</p>
-                    <div class="skill-bar">
-                        <span style="width:20%"></span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">06</div>
-                    <h3>💡 Problem Solving</h3>
-                    <p>DEVELOPING</p>
-                    <div class="skill-bar">
-                        <span style="width:30%"></span>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
+                </p>
 
 
-        <!-- =========================
-             PROJECTS
-        ========================== -->
+                <button
+                    class="retro-button"
+                    id="workButton"
+                >
 
-        <section id="projects">
+                    VIEW MY WORK
+                    <span>›</span>
 
-            <div class="section-label">
-                MISSION_LOG.SYS
-            </div>
-
-            <h2>
-                &lt; FEATURED PROJECTS /&gt;
-            </h2>
-
-            <div class="project-container">
+                </button>
 
 
-                <div class="project-card">
+                <!-- RETRO ROBOT -->
 
-                    <div class="project-number">
-                        #01
+                <div
+                    class="retro-robot"
+                    id="retroRobot"
+                >
+
+                    <div class="antenna"></div>
+
+                    <div class="robot-head">
+
+                        <div class="robot-screen">
+
+                            <span class="robot-eye">
+                                •
+                            </span>
+
+                            <span class="robot-eye">
+                                •
+                            </span>
+
+                            <div class="robot-mouth">
+                                ─
+                            </div>
+
+                        </div>
+
+
+                        <div class="robot-buttons">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
                     </div>
 
-                    <div class="project-status">
-                        EXPLORING
+
+                    <div class="robot-body">
+
+                        <span></span>
+                        <span></span>
+
                     </div>
-
-                    <h3>
-                        🛒 E-Commerce Website
-                    </h3>
-
-                    <p>
-                        A beginner-friendly shopping website
-                        created to understand how websites and
-                        online shopping systems work.
-                    </p>
-
-                    <span class="tech">
-                        HTML • CSS • JavaScript
-                    </span>
-
-                    <div class="project-line"></div>
-
-                    <a href="#" class="project-button">
-                        VIEW PROJECT →
-                    </a>
 
                 </div>
 
 
-                <div class="project-card">
+                <!-- ROBOT MESSAGE -->
 
-                    <div class="project-number">
-                        #02
-                    </div>
+                <div
+                    class="robot-message"
+                    id="robotMessage"
+                >
 
-                    <div class="project-status">
-                        DEVELOPING
-                    </div>
-
-                    <h3>
-                        ♻️ Waste Collection &amp; Recycling
-                    </h3>
-
-                    <p>
-                        A project exploring how technology can
-                        help improve waste collection and recycling.
-                    </p>
-
-                    <span class="tech">
-                        Python
-                    </span>
-
-                    <div class="project-line"></div>
-
-                    <a href="#" class="project-button">
-                        VIEW PROJECT →
-                    </a>
+                    CLICK ME :)
 
                 </div>
 
+            </section>
 
-                <div class="project-card">
 
-                    <div class="project-number">
-                        #03
-                    </div>
 
-                    <div class="project-status">
-                        EXPLORING
-                    </div>
+            <!-- =================================
+                 ABOUT
+            ================================== -->
 
-                    <h3>
-                        🤖 AI in Everyday Life
-                    </h3>
+            <section
+                id="about"
+                class="page-section"
+            >
 
-                    <p>
-                        A beginner project exploring how artificial
-                        intelligence is being used in healthcare,
-                        education and everyday applications.
-                    </p>
-
-                    <span class="tech">
-                        Python • AI
-                    </span>
-
-                    <div class="project-line"></div>
-
-                    <a href="#" class="project-button">
-                        VIEW PROJECT →
-                    </a>
-
+                <div class="section-title">
+                    ■ ABOUT ME
                 </div>
 
 
-            </div>
+                <div class="about-layout">
 
-        </section>
+                    <div class="profile-frame">
+
+                        <img
+                            src="profile.jpg"
+                            alt="Sarvesh"
+                        >
+
+                    </div>
 
 
-        <!-- =========================
-             EDUCATION
-        ========================== -->
+                    <div class="about-text">
 
-        <section id="education">
+                        <h2>
+                            SARVESH
+                        </h2>
 
-            <div class="section-label">
-                EDUCATION.LOG
-            </div>
+                        <p>
+                            I'm a first-year Computer Science
+                            Engineering student at SRM Institute
+                            of Science and Technology, Ramapuram.
+                        </p>
 
-            <h2>
-                &lt; EDUCATION /&gt;
-            </h2>
+                        <p>
+                            I'm currently exploring programming,
+                            web development, Artificial Intelligence
+                            and problem solving.
+                        </p>
 
-            <div class="education-card">
+                        <p>
+                            This portfolio is a small collection
+                            of what I'm learning and building.
+                        </p>
 
-                <div class="education-icon">
-                    🎓
+                    </div>
+
                 </div>
 
-                <div>
+            </section>
 
-                    <h3>
-                        B.Tech — Computer Science and Engineering
-                    </h3>
 
-                    <h4>
-                        SRM Institute of Science and Technology,
-                        Ramapuram
-                    </h4>
 
-                    <p class="date">
+            <!-- =================================
+                 SKILLS
+            ================================== -->
+
+            <section
+                id="skills"
+                class="page-section"
+            >
+
+                <div class="section-title">
+                    ■ SKILLS
+                </div>
+
+
+                <p class="section-subtitle">
+                    CURRENTLY LOADING...
+                </p>
+
+
+                <div class="skills-grid">
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">
+                            01
+                        </span>
+
+                        <strong>
+                            PYTHON
+                        </strong>
+
+                        <div class="progress">
+                            <span style="width: 70%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">
+                            02
+                        </span>
+
+                        <strong>
+                            HTML
+                        </strong>
+
+                        <div class="progress">
+                            <span style="width: 85%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">
+                            03
+                        </span>
+
+                        <strong>
+                            CSS
+                        </strong>
+
+                        <div class="progress">
+                            <span style="width: 80%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">
+                            04
+                        </span>
+
+                        <strong>
+                            JAVASCRIPT
+                        </strong>
+
+                        <div class="progress">
+                            <span style="width: 65%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">
+                            05
+                        </span>
+
+                        <strong>
+                            AI
+                        </strong>
+
+                        <div class="progress">
+                            <span style="width: 55%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <span class="skill-number">
+                            06
+                        </span>
+
+                        <strong>
+                            PROBLEM SOLVING
+                        </strong>
+
+                        <div class="progress">
+                            <span style="width: 60%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 PROJECTS
+            ================================== -->
+
+            <section
+                id="projects"
+                class="page-section"
+            >
+
+                <div class="section-title">
+                    ■ FEATURED PROJECTS
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article
+                        class="project-card"
+                        data-project="ecommerce"
+                    >
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+
+                        <div class="project-icon">
+                            🛒
+                        </div>
+
+
+                        <h3>
+                            E-COMMERCE WEBSITE
+                        </h3>
+
+
+                        <p>
+                            A responsive shopping
+                            website interface.
+                        </p>
+
+
+                        <span class="project-tech">
+                            HTML + CSS + JS
+                        </span>
+
+
+                        <button class="project-open">
+                            OPEN ›
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article
+                        class="project-card"
+                        data-project="waste"
+                    >
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+
+                        <div class="project-icon">
+                            ♻
+                        </div>
+
+
+                        <h3>
+                            WASTE COLLECTION
+                        </h3>
+
+
+                        <p>
+                            A Python-based idea for
+                            waste collection and recycling.
+                        </p>
+
+
+                        <span class="project-tech">
+                            PYTHON
+                        </span>
+
+
+                        <button class="project-open">
+                            OPEN ›
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article
+                        class="project-card"
+                        data-project="ai"
+                    >
+
+                        <span class="project-number">
+                            03
+                        </span>
+
+
+                        <div class="project-icon">
+                            ◉
+                        </div>
+
+
+                        <h3>
+                            AI IN EVERYDAY LIFE
+                        </h3>
+
+
+                        <p>
+                            Exploring how AI can be
+                            used in everyday situations.
+                        </p>
+
+
+                        <span class="project-tech">
+                            PYTHON + AI
+                        </span>
+
+
+                        <button class="project-open">
+                            OPEN ›
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 EDUCATION
+            ================================== -->
+
+            <section
+                id="education"
+                class="page-section"
+            >
+
+                <div class="section-title">
+                    ■ EDUCATION
+                </div>
+
+
+                <div class="education-card">
+
+                    <span class="edu-year">
                         2026 — 2030
-                    </p>
+                    </span>
+
+
+                    <h2>
+                        B.TECH COMPUTER SCIENCE
+                    </h2>
+
 
                     <p>
-                        Currently pursuing my undergraduate degree
-                        and exploring programming, AI, web development
-                        and other areas of computer science.
+                        SRM Institute of Science
+                        and Technology
+                    </p>
+
+
+                    <p>
+                        Ramapuram, Chennai
+                    </p>
+
+
+                    <div class="edu-status">
+                        STATUS: ACTIVE
+                    </div>
+
+                </div>
+
+
+                <div class="education-card secondary">
+
+                    <span class="edu-year">
+                        SCHOOL
+                    </span>
+
+
+                    <h2>
+                        PSBB MILLENNIUM SCHOOL
+                    </h2>
+
+
+                    <p>
+                        Chennai, India
                     </p>
 
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- =========================
-             CONTACT
-        ========================== -->
 
-        <section id="contact">
+            <!-- =================================
+                 CONTACT
+            ================================== -->
 
-            <div class="section-label">
-                COMMUNICATION_LINK.SYS
-            </div>
+            <section
+                id="contact"
+                class="page-section contact-section"
+            >
 
-            <h2>
-                &lt; GET IN TOUCH /&gt;
-            </h2>
-
-
-            <div class="contact-card">
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        @
-                    </div>
-
-                    <div>
-                        <h3>EMAIL</h3>
-                        <p>110228sarvesh@gmail.com</p>
-                    </div>
-
+                <div class="section-title">
+                    ■ LET'S CONNECT
                 </div>
 
 
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        #
-                    </div>
-
-                    <div>
-                        <h3>LOCATION</h3>
-                        <p>Chennai, India</p>
-                    </div>
-
-                </div>
+                <p>
+                    FIND ME ON:
+                </p>
 
 
-                <div class="connect-title">
-                    CONNECT WITH ME
-                </div>
+                <!-- ONLY LOGOS -->
+
+                <div class="social-links">
 
 
-                <div class="contact-buttons">
+                    <!-- GITHUB -->
 
                     <a
                         href="https://github.com/110228sarvesh-a11y"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-logo"
+                        aria-label="GitHub"
+                        title="GitHub"
                     >
-                        💻 GITHUB
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path
+                                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.8 10.8 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.42-2.71 5.39-5.29 5.67.41.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+                            />
+
+                        </svg>
+
                     </a>
+
+
+
+                    <!-- LINKEDIN -->
 
                     <a
                         href="https://www.linkedin.com/in/sarvesh-madhavan-125361431/"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-logo"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
                     >
-                        🔗 LINKEDIN
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path
+                                d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.54 20.45h3.56V8.99H3.54v11.46ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0Z"
+                            />
+
+                        </svg>
+
                     </a>
+
+
+
+                    <!-- EMAIL -->
 
                     <a
                         href="mailto:110228sarvesh@gmail.com"
+                        class="social-logo"
+                        aria-label="Email"
+                        title="Email"
                     >
-                        📧 EMAIL
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path
+                                d="M2 4h20v16H2V4Zm2 2v.5l8 5.5 8-5.5V6l-8 5.5L4 6Zm0 12h16V9l-8 5.5L4 9v9Z"
+                            />
+
+                        </svg>
+
                     </a>
 
                 </div>
 
+            </section>
 
-                <div class="connection-status">
 
-                    <div class="status-text">
-                        <span>CONNECTION STATUS</span>
-                        <span>ONLINE</span>
-                    </div>
+        </div>
 
-                    <div class="status-bar">
-                        <span></span>
-                    </div>
 
-                    <div class="status-details">
-                        <span>LATENCY: 0ms</span>
-                        <span>BANDWIDTH: ∞</span>
-                        <span>UPTIME: 99.9%</span>
-                    </div>
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
 
-                </div>
+        <footer>
 
-            </div>
+            © 2026 SARVESH
+            <span>•</span>
+            ALL SYSTEMS OPERATIONAL
 
-        </section>
+        </footer>
 
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
 
-    <footer>
+    <!-- =========================================
+         PROJECT POPUP
+    ========================================== -->
 
-        <div class="footer-terminal">
-            &gt; SYSTEM ONLINE
+    <div
+        class="project-modal"
+        id="projectModal"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+
+            <div
+                class="modal-number"
+                id="modalNumber"
+            >
+                01
+            </div>
+
+
+            <h2 id="modalTitle">
+                PROJECT
+            </h2>
+
+
+            <p id="modalDescription">
+                Project description.
+            </p>
+
+
+            <div
+                class="modal-tech"
+                id="modalTech"
+            >
+                TECHNOLOGY
+            </div>
+
         </div>
 
-        <p>
-            Built with curiosity, code and dedication.
-        </p>
+    </div>
 
-        <div class="footer-links">
-
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
-        <small>
-            © 2026 Sarvesh • ALL SYSTEMS OPERATIONAL
-        </small>
-
-    </footer>
 
 
     <script src="script.js"></script>
