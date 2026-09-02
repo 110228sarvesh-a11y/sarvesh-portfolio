@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "retroRobot"
         );
 
+
     const robotMessage =
         document.getElementById(
             "robotMessage"
@@ -335,10 +336,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 "WASTE COLLECTION & RECYCLING",
 
             description:
-                "A Python project concept focused on waste collection and recycling. The idea explores how technology can help make waste management more organised.",
+                "A Python-based waste management system that simulates waste collection, transportation to a recycling plant and recycling into reusable material. Binary file handling with Pickle is used to save and retrieve project data.",
 
             tech:
-                "PYTHON"
+                "PYTHON + PICKLE + BINARY FILES"
 
         },
 
@@ -377,25 +378,30 @@ document.addEventListener("DOMContentLoaded", function () {
             "projectModal"
         );
 
+
     const modalClose =
         document.getElementById(
             "modalClose"
         );
+
 
     const modalNumber =
         document.getElementById(
             "modalNumber"
         );
 
+
     const modalTitle =
         document.getElementById(
             "modalTitle"
         );
 
+
     const modalDescription =
         document.getElementById(
             "modalDescription"
         );
+
 
     const modalTech =
         document.getElementById(
@@ -426,11 +432,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     modalNumber.textContent =
                         project.number;
 
+
                     modalTitle.textContent =
                         project.title;
 
+
                     modalDescription.textContent =
                         project.description;
+
 
                     modalTech.textContent =
                         project.tech;
@@ -448,7 +457,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    /* CLOSE MODAL */
+    /* =========================================
+       WASTE PROJECT BUTTON
+    ========================================== */
+
+    const wasteProjectButton =
+        document.querySelector(
+            '[data-project-action="waste"]'
+        );
+
+
+    if (wasteProjectButton) {
+
+        wasteProjectButton.addEventListener(
+            "click",
+            function (event) {
+
+                /*
+                   Prevent the project card's
+                   click event from firing twice.
+                */
+
+                event.stopPropagation();
+
+
+                modalNumber.textContent =
+                    "02";
+
+
+                modalTitle.textContent =
+                    "WASTE COLLECTION & RECYCLING";
+
+
+                modalDescription.textContent =
+                    "A Python-based waste management system that simulates waste collection, transportation to a recycling plant and recycling into reusable material. Binary file handling with Pickle is used to save and retrieve project data.";
+
+
+                modalTech.textContent =
+                    "PYTHON + PICKLE + BINARY FILES";
+
+
+                modal.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================================
+       CLOSE MODAL
+    ========================================== */
 
     modalClose.addEventListener(
         "click",
@@ -462,7 +524,10 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* CLICK OUTSIDE MODAL */
+
+    /* =========================================
+       CLICK OUTSIDE MODAL
+    ========================================== */
 
     modal.addEventListener(
         "click",
@@ -482,7 +547,10 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* ESCAPE KEY */
+
+    /* =========================================
+       ESCAPE KEY
+    ========================================== */
 
     document.addEventListener(
         "keydown",
@@ -565,9 +633,3 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
-function openWasteProject() {
-    window.open(
-        "YOUR_GITHUB_PROJECT_LINK",
-        "_blank"
-    );
-}
