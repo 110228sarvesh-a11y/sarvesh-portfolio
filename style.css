@@ -1195,16 +1195,23 @@ body {
 ========================================= */
 
 .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+}
+@media (max-width: 800px) {
 
-    display:
-        grid;
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 
-    grid-template-columns:
-        repeat(3, 1fr);
+}
 
-    gap:
-        18px;
-
+.project-card {
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 
@@ -1261,6 +1268,14 @@ body {
     margin:
         20px 0;
 
+}
+.project-card h3 {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.project-card p {
+    overflow-wrap: break-word;
 }
 
 
