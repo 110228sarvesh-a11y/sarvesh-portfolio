@@ -460,52 +460,24 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =========================================
        WASTE PROJECT BUTTON
     ========================================== */
+const wasteProjectButton =
+    document.querySelector(
+        '[data-project-action="waste"]'
+    );
 
-    const wasteProjectButton =
-        document.querySelector(
-            '[data-project-action="waste"]'
-        );
+if (wasteProjectButton) {
+    wasteProjectButton.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
 
-
-    if (wasteProjectButton) {
-
-        wasteProjectButton.addEventListener(
-            "click",
-            function (event) {
-
-                /*
-                   Prevent the project card's
-                   click event from firing twice.
-                */
-
-                event.stopPropagation();
-
-
-                modalNumber.textContent =
-                    "02";
-
-
-                modalTitle.textContent =
-                    "WASTE COLLECTION & RECYCLING";
-
-
-                modalDescription.textContent =
-                    "A Python-based waste management system that simulates waste collection, transportation to a recycling plant and recycling into reusable material. Binary file handling with Pickle is used to save and retrieve project data.";
-
-
-                modalTech.textContent =
-                    "PYTHON + PICKLE + BINARY FILES";
-
-
-                modal.classList.add(
-                    "show"
-                );
-
-            }
-        );
-
-    }
-
+            window.open(
+                "https://github.com/110228sarvesh-a11y/waste-collection-recycling-system",
+                "_blank"
+            );
+        }
+    );
+}
 
 
     /* =========================================
