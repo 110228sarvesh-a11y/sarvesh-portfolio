@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        CLOCK
-    ========================================== */
+    ========================================= */
 
     const clock =
         document.getElementById("clock");
@@ -11,20 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateClock() {
 
-        const now =
-            new Date();
+        const now = new Date();
 
         let hours =
-            now.getHours();
+            now.getHours()
+                .toString()
+                .padStart(2, "0");
 
         let minutes =
-            now.getMinutes();
-
-        hours =
-            hours.toString().padStart(2, "0");
-
-        minutes =
-            minutes.toString().padStart(2, "0");
+            now.getMinutes()
+                .toString()
+                .padStart(2, "0");
 
         clock.textContent =
             hours + ":" + minutes;
@@ -34,22 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateClock();
 
-    setInterval(
-        updateClock,
-        1000
-    );
+    setInterval(updateClock, 1000);
 
 
 
     /* =========================================
        THREE DOT MENU
-    ========================================== */
+    ========================================= */
 
     const menuButton =
         document.getElementById("menuButton");
 
-    const retroMenu =
-        document.getElementById("retroMenu");
+    const gameMenu =
+        document.getElementById("gameMenu");
 
 
     menuButton.addEventListener(
@@ -58,28 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             event.stopPropagation();
 
-            retroMenu.classList.toggle(
-                "open"
-            );
+            gameMenu.classList.toggle("open");
 
         }
     );
 
-
-    /* CLOSE MENU WHEN CLICKING OUTSIDE */
 
     document.addEventListener(
         "click",
         function (event) {
 
             if (
-                !retroMenu.contains(event.target) &&
+                !gameMenu.contains(event.target) &&
                 event.target !== menuButton
             ) {
 
-                retroMenu.classList.remove(
-                    "open"
-                );
+                gameMenu.classList.remove("open");
 
             }
 
@@ -90,72 +78,61 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        NAVIGATION
-    ========================================== */
+    ========================================= */
 
     const menuItems =
-        document.querySelectorAll(
-            ".menu-item"
-        );
+        document.querySelectorAll(".menu-item");
 
 
-    menuItems.forEach(
-        function (item) {
+    menuItems.forEach(function (item) {
 
-            item.addEventListener(
-                "click",
-                function () {
+        item.addEventListener(
+            "click",
+            function () {
 
-                    const sectionID =
-                        item.dataset.section;
+                const sectionID =
+                    item.dataset.section;
 
-                    const section =
-                        document.getElementById(
-                            sectionID
-                        );
+                const section =
+                    document.getElementById(sectionID);
 
 
-                    if (section) {
+                if (section) {
 
-                        section.scrollIntoView({
-                            behavior:
-                                "smooth"
-                        });
-
-                    }
-
-
-                    retroMenu.classList.remove(
-                        "open"
-                    );
+                    section.scrollIntoView({
+                        behavior: "smooth"
+                    });
 
                 }
-            );
 
-        }
-    );
+
+                gameMenu.classList.remove("open");
+
+            }
+        );
+
+    });
 
 
 
     /* =========================================
-       VIEW MY WORK BUTTON
-    ========================================== */
+       PRESS START
+    ========================================= */
 
     const workButton =
-        document.getElementById(
-            "workButton"
-        );
+        document.getElementById("workButton");
 
 
     workButton.addEventListener(
         "click",
         function () {
 
-            document
-                .getElementById("projects")
-                .scrollIntoView({
-                    behavior:
-                        "smooth"
-                });
+            const projects =
+                document.getElementById("projects");
+
+            projects.scrollIntoView({
+                behavior: "smooth"
+            });
 
         }
     );
@@ -163,97 +140,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       RETRO ROBOT
-    ========================================== */
+       DELIVERY CHARACTER
+    ========================================= */
 
-    const robot =
+    const character =
         document.getElementById(
-            "retroRobot"
+            "deliveryCharacter"
+        );
+
+    const characterMessage =
+        document.getElementById(
+            "characterMessage"
         );
 
 
-    const robotMessage =
-        document.getElementById(
-            "robotMessage"
-        );
+    const messages = [
 
+        "DELIVERY READY!",
 
-    const robotMessages = [
+        "PACKAGE SECURED!",
 
-        "HELLO HUMAN :)",
-        "SYSTEM ONLINE",
-        "NICE TO MEET YOU!",
-        "WANT TO SEE MY PROJECTS?",
-        "KEEP EXPLORING...",
-        "SARVESH.EXE LOADED",
+        "QUEST ACCEPTED!",
+
+        "KEEP EXPLORING!",
+
+        "PROJECTS AHEAD!",
+
         "BEEP BOOP!",
-        "YOU FOUND ME!",
-        "CLICK THE 3 DOTS ↑",
-        "WELCOME TO THE MATRIX",
-        "ERROR 404: BORING PORTFOLIO",
-        "I LIKE THIS WEBSITE 👀"
+
+        "GOOD LUCK PLAYER!",
+
+        "SARVESH.EXE ONLINE!",
+
+        "YOU FOUND ME!"
 
     ];
 
 
-    let robotClick =
-        0;
+    let clickCount = 0;
 
 
-    robot.addEventListener(
+    character.addEventListener(
         "click",
         function () {
 
-            robot.classList.remove(
+            character.classList.remove(
+                "active"
+            );
+
+            void character.offsetWidth;
+
+            character.classList.add(
                 "active"
             );
 
 
-            /* Restart animation */
-
-            void robot.offsetWidth;
+            clickCount++;
 
 
-            robot.classList.add(
-                "active"
-            );
-
-
-            robotClick++;
-
-
-            const message =
-                robotMessages[
-                    robotClick %
-                    robotMessages.length
+            characterMessage.textContent =
+                messages[
+                    clickCount %
+                    messages.length
                 ];
-
-
-            robotMessage.textContent =
-                message;
-
-
-            /* Change face */
-
-            const mouth =
-                document.querySelector(
-                    ".robot-mouth"
-                );
-
-
-            if (
-                robotClick % 2 === 0
-            ) {
-
-                mouth.textContent =
-                    "⌣";
-
-            } else {
-
-                mouth.textContent =
-                    "─";
-
-            }
 
         }
     );
@@ -261,31 +210,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       ROBOT IDLE MESSAGES
-    ========================================== */
+       AUTOMATIC CHARACTER MESSAGES
+    ========================================= */
 
-    let idleIndex =
-        0;
+    let idleIndex = 0;
 
 
     setInterval(
         function () {
 
-            if (
-                document.hidden
-            ) {
-
+            if (document.hidden) {
                 return;
-
             }
 
 
             idleIndex++;
 
-
             if (
                 idleIndex >=
-                robotMessages.length
+                messages.length
             ) {
 
                 idleIndex = 0;
@@ -293,28 +236,24 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            robotMessage.textContent =
-                robotMessages[
-                    idleIndex
-                ];
+            characterMessage.textContent =
+                messages[idleIndex];
 
         },
-
-        7000
-
+        6000
     );
 
 
 
     /* =========================================
        PROJECT DATA
-    ========================================== */
+    ========================================= */
 
     const projectData = {
 
         ecommerce: {
 
-            number: "01",
+            number: "QUEST_01",
 
             title:
                 "E-COMMERCE WEBSITE",
@@ -330,29 +269,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         waste: {
 
-            number: "02",
+            number: "QUEST_02",
 
             title:
                 "WASTE COLLECTION & RECYCLING",
 
             description:
-                "A Python-based waste management system that simulates waste collection, transportation to a recycling plant and recycling into reusable material. Binary file handling with Pickle is used to save and retrieve project data.",
+                "A Python project focused on waste collection and recycling. The system explores how technology can make waste management more organised.",
 
             tech:
-                "PYTHON + PICKLE + BINARY FILES"
+                "PYTHON + PICKLE"
 
         },
 
 
         ai: {
 
-            number: "03",
+            number: "QUEST_03",
 
             title:
                 "AI IN EVERYDAY LIFE",
 
             description:
-                "A project exploring the role of Artificial Intelligence in everyday life and how AI-based technologies are becoming part of our daily activities.",
+                "A project exploring the role of Artificial Intelligence in everyday life and how AI-based technologies are becoming part of daily activities.",
 
             tech:
                 "PYTHON + AI"
@@ -365,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        PROJECT MODAL
-    ========================================== */
+    ========================================= */
 
     const projectCards =
         document.querySelectorAll(
@@ -409,80 +348,72 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    projectCards.forEach(
-        function (card) {
 
-            card.addEventListener(
-                "click",
-                function () {
+    projectCards.forEach(function (card) {
 
-                    const project =
-                        projectData[
-                            card.dataset.project
-                        ];
+        card.addEventListener(
+            "click",
+            function (event) {
 
 
-                    if (!project) {
+                /*
+                 Prevent the Waste Collection
+                 GitHub link from opening the
+                 project modal.
+                */
 
-                        return;
+                if (
+                    event.target.closest(
+                        "a.project-open"
+                    )
+                ) {
 
-                    }
-
-
-                    modalNumber.textContent =
-                        project.number;
-
-
-                    modalTitle.textContent =
-                        project.title;
-
-
-                    modalDescription.textContent =
-                        project.description;
-
-
-                    modalTech.textContent =
-                        project.tech;
-
-
-                    modal.classList.add(
-                        "show"
-                    );
+                    return;
 
                 }
-            );
-
-        }
-    );
 
 
+                const project =
+                    projectData[
+                        card.dataset.project
+                    ];
 
-    /* =========================================
-       WASTE PROJECT BUTTON
-    ========================================== */
-const wasteProjectButton =
-    document.querySelector(
-        '[data-project-action="waste"]'
-    );
 
-if (wasteProjectButton) {
-    wasteProjectButton.addEventListener(
-        "click",
-        function (event) {
-            event.stopPropagation();
+                if (!project) {
+                    return;
+                }
 
-            window.open(
-                "https://github.com/110228sarvesh-a11y/waste-collection-recycling-system",
-                "_blank"
-            );
-        }
-    );
-}
+
+                modalNumber.textContent =
+                    project.number;
+
+
+                modalTitle.textContent =
+                    project.title;
+
+
+                modalDescription.textContent =
+                    project.description;
+
+
+                modalTech.textContent =
+                    project.tech;
+
+
+                modal.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+    });
+
 
 
     /* =========================================
        CLOSE MODAL
-    ========================================== */
+    ========================================= */
 
     modalClose.addEventListener(
         "click",
@@ -499,7 +430,7 @@ if (wasteProjectButton) {
 
     /* =========================================
        CLICK OUTSIDE MODAL
-    ========================================== */
+    ========================================= */
 
     modal.addEventListener(
         "click",
@@ -522,7 +453,7 @@ if (wasteProjectButton) {
 
     /* =========================================
        ESCAPE KEY
-    ========================================== */
+    ========================================= */
 
     document.addEventListener(
         "keydown",
@@ -536,7 +467,7 @@ if (wasteProjectButton) {
                     "show"
                 );
 
-                retroMenu.classList.remove(
+                gameMenu.classList.remove(
                     "open"
                 );
 
@@ -548,56 +479,54 @@ if (wasteProjectButton) {
 
 
     /* =========================================
-       RANDOM CRT FLICKER
-    ========================================== */
+       MOVING PACKAGES
+    ========================================= */
 
-    setInterval(
-        function () {
-
-            const device =
-                document.querySelector(
-                    ".retro-device"
-                );
+    const packages =
+        document.querySelectorAll(
+            ".package"
+        );
 
 
-            device.style.opacity =
-                "0.985";
+    packages.forEach(function (box, index) {
 
+        box.addEventListener(
+            "click",
+            function () {
 
-            setTimeout(
-                function () {
+                box.style.animation =
+                    "none";
 
-                    device.style.opacity =
-                        "1";
+                void box.offsetWidth;
 
-                },
-                50
-            );
+                box.style.animation =
+                    "packageFloat .5s ease-in-out";
 
-        },
-        6000
-    );
+            }
+        );
+
+    });
 
 
 
     /* =========================================
        CONSOLE
-    ========================================== */
+    ========================================= */
 
     console.log(
         "================================"
     );
 
     console.log(
-        " SARVESH PORTFOLIO SYSTEM ONLINE "
+        " SARVESH DELIVERY QUEST "
     );
 
     console.log(
-        " RETRO MODE: ENABLED "
+        " PIXEL MODE: ENABLED "
     );
 
     console.log(
-        " ROBOT: ONLINE "
+        " QUEST SYSTEM: ONLINE "
     );
 
     console.log(
